@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>EdgeLedger Financial | Accounting & Investment</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link
+      rel="stylesheet"
+      media="screen and (max-width: 768px)"
+      href="css/mobile.css"
+    />
+    <script
+      src="https://kit.fontawesome.com/f9ebc430b8.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body id="home">
+    <div class="container">
+      <div class="description">
+        <h2>
+          Kalkulator energetskih potreba
+        </h2>
+        <div>
+          Izračunajte koliko kalorija morate unositi na dnevnoj bazi
+        </div>
+        <div>
+          U kolonu lijevo unesite potrebne podatke kako bi vam se u koloni desno
+          mogli prikazivati izračuni
+        </div>
+      </div>
+      <div class="all">
+        <div class="calculator">
+          <div class="input">
+            <h2>Unesite potrebne podatke</h2>
+            <div class="input-params">
+              <div class="input-param">
+                <div>Tjelesna masa (kg)</div>
+                <input id="masa" type="number" step="1" />
+              </div>
+              <div class="input-param">
+                <div>Postotak masnog tkiva (%)</div>
+                <input id="tkivo" type="number" step="1" />
+              </div>
+              <div class="input-param">
+                <div>Faktor tjelesne aktivnosti</div>
+                <input id="faktor" type="number" step="1" />
+              </div>
+              <div class="input-param">
+                <div>Termički efekt hrane</div>
+                <input id="termicki" type="number" step="1" />
+              </div>
+              <div class="input-param">
+                <div>Prosječno trajanje treninga (min)</div>
+                <input id="trajanje" type="number" step="1" />
+              </div>
+              <div class="input-param">
+                <div>Faktor energetske ravnoteže</div>
+                <input id="ravnoteza" type="number" step="1" />
+              </div>
+              <div class="input-param">
+                <div>Broj dana treninga u tjednu</div>
+                <input id="dani" type="number" step="1" />
+              </div>
+            </div>
+          </div>
+          <div class="output">
+            <h2>Izračuni</h2>
+            <div class="output-params">
+              <div class="output-param">
+                <div>Nemasna tjelesna masa (kg)</div>
+                <div id="ntm" class="result"></div>
+              </div>
+              <div class="output-param">
+                <div>Katch - McArdle Bazalni metabolizam</div>
+                <div id="kmbm" class="result"></div>
+              </div>
+              <div class="output-param">
+                <div>Potrošnja energije tijekom treninga (EE)</div>
+                <div id="ee" class="result"></div>
+              </div>
+              <div class="output-param">
+                <div>Energetska potrošnja u mirovanju (REE)</div>
+                <div id="ree" class="result"></div>
+              </div>
+              <div class="output-param">
+                <div>Ukupna potrošnja energije na dane treninga</div>
+                <div id="upendt" class="result"></div>
+              </div>
+              <div class="output-param">
+                <div>
+                  Prosječna dnevna količina energije potrebna za održavanje
+                  ravnoteže
+                </div>
+                <div id="pdke" class="result"></div>
+              </div>
+              <div class="output-param">
+                <h3>Prosječna potreba na energiji</h3>
+                <div id="ppne" class="result"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <button id="calculate">Izračunaj</button>
+        <a href="https://thenutrivision.com/"
+          ><img id="logo" src="./img/nutrivision_logo_horizontal.png" alt=""
+        /></a>
+      </div>
+
+      <div class="param-descr">
+        <h4>Pomoć kod procjena pojedinih komponenti potrebnih za izračun</h4>
+        <div class="grid-wrap">
+          <div class="param">
+            <div>
+              Postotak masnog tkiva (%) = 1.2 x BMI + 0.23 x DOB - 10.8 x SPOL
+              -5.4
+            </div>
+            <div>Gdje SPOL = 1 za muški i SPOL = 0 za ženski</div>
+            <div>BMI (kg/m&sup2;) = MASA (kg) / VISINA&sup2; (m&sup2;)</div>
+          </div>
+
+          <div class="param">
+            <div style="border-bottom: 1px solid black;">
+              Faktor energetske ravnoteže
+            </div>
+            <div>
+              Ukoliko želite izračunati svoje energetske potrebe stavite faktor
+              od 1
+            </div>
+          </div>
+          <div class="param">
+            <div>Termički efekt hrane</div>
+            <div style="border-bottom: 1px solid black;">Izmedu 1.2 i 1.25</div>
+            <div>
+              Niže vrijednosti su za pretile ljude koji konzumiraju tipičnu
+              zapadnjačku prehranu: primarno niski unos proteina i vlakana,
+              procesirana hrana
+            </div>
+            <div>
+              Više vrijednosti su za utrenirane ljude, niže vrijednosti postotka
+              masnog tkiva, prehrana bogata proteinima, vlaknima i cjelovitom,
+              neprocesiranom hranom
+            </div>
+          </div>
+          <div class="param">
+            <div style="border-bottom: 1px solid black;">Faktor aktivnosti</div>
+            <div>Sjedilački - uredski posao: 1-1.1</div>
+            <div>
+              Ponešto aktivni - šetnja s psom, vožnja bicikla, itd: 1.1 - 1.3
+            </div>
+            <div>
+              Aktivni - posao koji zahtjeva da ste stalno na nogama i u pokretu:
+              1.3 - 1.4
+            </div>
+            <div>
+              Izrazito aktivni - izrazito teški poslovi, npr. gradevina: 1.4 -
+              1.5
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- <script
+      src="https://code.jquery.com/jquery-3.4.1.min.js"
+      integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+      crossorigin="anonymous"
+    ></script> -->
+    <script src="js/main.js"></script>
+  </body>
+</html>

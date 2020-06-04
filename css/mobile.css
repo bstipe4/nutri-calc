@@ -1,0 +1,23 @@
+.calculator {
+  flex-direction: column;
+}
+
+.grid-wrap {
+  /* display: grid; */
+  grid-template-columns: repeat(1, 1fr);
+  /* grid-gap: 0.5rem; */
+  /* align-items: center; */
+}
+
+a {
+  margin: 2rem 0;
+}
+
+.input-params,
+.output-params {
+  width: 100%;
+}
+
+.input {
+  width: 95%;
+}
