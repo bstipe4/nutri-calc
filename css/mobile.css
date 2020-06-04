@@ -18,6 +18,7 @@ a {
   width: 100%;
 }
 
-.input {
+.input,
+.output {
   width: 95%;
 }
